@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhinav's Restaurant</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #fefefe;
+      color: #333;
+    }
+    header {
+      background: #229fb2;
+      color: white;
+      padding: 50px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    nav {
+      background: #71008b;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #22b27d;
+    }
+    /* Menu styling */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .menu-item {
+      background: #fff8f0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    .menu-item h3 {
+      margin-top: 0;
+      color: #004c8b;
+    }
+    /* Reservation form */
+    form {
+      background: #fff8f0;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    form input, form select, form button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background: #b222ad;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    form button:hover {
+      background: #8b0000;
+    }
+    /* Reviews */
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .review {
+      background: #fff8f0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    .review strong { color: #8b0000; }
+    footer {
+      text-align: center;
+      background: #8b0000;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <header>
+
+    <h1>Abhinav's Restaurant</h1>
+    <p>Delicious food, cozy vibes</p>
+  </header>
+
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#reservation">Reservation</a>
+    <a href="#reviews">Reviews</a>
+  </nav>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h3><b>Margherita Pizza</b></h3>
+        <p>Classic Italian pizza with fresh mozzarella, basil & tomato sauce.</p>
+        <p><strong>₹450</strong></p>
+      </div>
+      <div class="menu-item">
+        <h3><b>Paneer Butter Masala</b></h3>
+        <p>Rich creamy curry with soft paneer cubes & Indian spices.</p>
+        <p><strong>₹350</strong></p>
+      </div>
+
+         
+            <div class="menu-item">
+        <h3><b>Classic cheesy Burger</b></h3>
+        <p>Royal Paneer Grilled Burger.</p>
+        <p><strong>₹250</strong></p>
+      </div>
+      <div class="menu-item">
+        <h3><b>Veg Biryani</b></h3>
+        <p>Aromatic rice with fresh vegetables & saffron flavors.</p>
+        <p><strong>₹300</strong></p>
+      </div>
+      <div class="menu-item">
+        <h3><b>Chocolate Lava Cake</b></h3>
+        <p>Warm chocolate cake with a gooey molten center.</p>
+        <p><strong>₹200</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Section -->
+  <section id="reservation">
+    <h2>Book a Table</h2>
+    <form id="reservationForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+      <label for="date">Date</label>
+      <input type="date" id="date" required>
+      <label for="time">Time</label>
+      <input type="time" id="time" required>
+      <label for="guests">Number of Guests</label>
+      <select id="guests" required>
+        <option value="">Select</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3-4</option>
+        <option>5+</option>
+      </select>
+      <button type="submit">Reserve Now</button>
+    </form>
+    <p id="confirmation" style="text-align:center; font-weight:bold; color:green; margin-top:20px;"></p>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews">
+    <h2><b>Customer Reviews</b></h2>
+    <div class="reviews">
+      <div class="review">
+        <p><strong>Amit Sharma:</strong> “The food was amazing! Best biryani I’ve ever had.”</p>
+      </div>
+      <div class="review">
+        <p><strong>Neha Singh:</strong> “Great ambiance and friendly staff. Highly recommended!”</p>
+      </div>
+      <div class="review">
+        <p><strong>Ravi Kumar:</strong> “Loved the lava cake. I’ll be coming back soon.”</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Abhinav's Restaurant | Designed by You</p>
+  </footer>
+
+  <script>
+    document.getElementById("reservationForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      document.getElementById("confirmation").innerText = 
+        "Thank you, " + document.getElementById("name").value + "! Your table has been reserved.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
